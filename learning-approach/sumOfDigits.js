@@ -1,26 +1,50 @@
-let lastDigit = 1;
+const lastDigit = 3;
+let sumOfAll = 0;
 if(lastDigit === 1){
-
-  const sumOfAll = lastDigit ;
-  console.log("sum of until",lastDigit," is",sumOfAll);
+  sumOfAll = lastDigit ;  
 }
+
 if(lastDigit === 2){
-
-  const sumOfAll = lastDigit + lastDigit -1;
-  console.log("sum of until",lastDigit," is",sumOfAll);
+  let oneLess = lastDigit -1; 
+  sumOfAll = lastDigit + oneLess;
 }
-if(lastDigit === 3){
 
-  const sumOfAll = lastDigit + lastDigit -1 + lastDigit -2;
-  console.log("sum of until",lastDigit," is",sumOfAll);
+if(lastDigit === 3){
+  let oneLess = lastDigit -1;
+  sumOfAll = lastDigit + oneLess;
+  oneLess--;
+  sumOfAll = sumOfAll + oneLess;
+
 }
 if(lastDigit === 4){
+  let oneLess = lastDigit -1;
+  sumOfAll = lastDigit + oneLess;
+  oneLess--;
+  sumOfAll = sumOfAll + oneLess;
+  oneLess--;
+  sumOfAll = sumOfAll + oneLess;
 
-  const sumOfAll = lastDigit + lastDigit -1 + lastDigit -2 + lastDigit -3;
-  console.log("sum of until",lastDigit," is",sumOfAll);
 }
+
 if(lastDigit === 5){
+  let oneLess = lastDigit -1;
+  sumOfAll = lastDigit + oneLess;
+  oneLess--;
+  sumOfAll = sumOfAll + oneLess;
+  oneLess--;
+  sumOfAll = sumOfAll + oneLess;
+  oneLess--;
+  sumOfAll = sumOfAll + oneLess;
 
-  const sumOfAll = lastDigit + lastDigit -1 + lastDigit -2 + lastDigit -3 + lastDigit -4;
-  console.log("sum of until",lastDigit," is",sumOfAll);
 }
+
+  
+console.log(" sum of until ",lastDigit, " is ", sumOfAll);
+// if(lastDigit === 5){
+//   sumOfAll = lastDigit +oneLess + lastDigit -2 + lastDigit -3 + lastDigit -4;  
+// }
+// console.log("sum of until",lastDigit," is",sumOfAll);
+
+
+
+
