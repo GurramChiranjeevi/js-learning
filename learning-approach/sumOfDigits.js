@@ -1,50 +1,13 @@
-const lastDigit = 3;
+const lastDigit = 5;
 let sumOfAll = 0;
-if(lastDigit === 1){
-  sumOfAll = lastDigit ;  
-}
+let oneLess ;
 
-if(lastDigit === 2){
-  let oneLess = lastDigit -1; 
-  sumOfAll = lastDigit + oneLess;
-}
-
-if(lastDigit === 3){
-  let oneLess = lastDigit -1;
-  sumOfAll = lastDigit + oneLess;
-  oneLess--;
-  sumOfAll = sumOfAll + oneLess;
-
-}
-if(lastDigit === 4){
-  let oneLess = lastDigit -1;
-  sumOfAll = lastDigit + oneLess;
-  oneLess--;
-  sumOfAll = sumOfAll + oneLess;
-  oneLess--;
-  sumOfAll = sumOfAll + oneLess;
-
-}
-
-if(lastDigit === 5){
-  let oneLess = lastDigit -1;
-  sumOfAll = lastDigit + oneLess;
-  oneLess--;
-  sumOfAll = sumOfAll + oneLess;
-  oneLess--;
-  sumOfAll = sumOfAll + oneLess;
-  oneLess--;
-  sumOfAll = sumOfAll + oneLess;
-
-}
-
-  
-console.log(" sum of until ",lastDigit, " is ", sumOfAll);
-// if(lastDigit === 5){
-//   sumOfAll = lastDigit +oneLess + lastDigit -2 + lastDigit -3 + lastDigit -4;  
-// }
-// console.log("sum of until",lastDigit," is",sumOfAll);
-
-
-
-
+oneLess = lastDigit ;
+  while( true) {
+    sumOfAll = sumOfAll + oneLess;
+    oneLess -- ; 
+    if ( oneLess === 0){
+      break;
+    }
+  }
+  console.log(" sum of until ",lastDigit, " is ", sumOfAll);
