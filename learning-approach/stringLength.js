@@ -1,3 +1,7 @@
+const givenString = "hello" ;
+let givenStringLength = 0 ;
+let lengthCounter = 0;
+
 while(true) {
   lengthCounter = lengthCounter + 1;
   if(givenString[lengthCounter] === undefined) {
