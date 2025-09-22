@@ -1,0 +1,14 @@
+inputs         expected output
+"hello"           length of hello is 5
+"hello world"     length of hello world is 11
+""                length of is 0
+" "               length of  is 1
+"12"              length of 12 is 2
+
+
+
+
+
+
+
+
