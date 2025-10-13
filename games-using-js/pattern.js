@@ -1,3 +1,4 @@
+//we can print circle, parabola, chess pattern
 function sqr(x) {
   return x * x;
 }
