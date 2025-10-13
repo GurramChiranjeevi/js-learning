@@ -1,5 +1,5 @@
-function generateNumber() {
-  return Math.floor(Math.random() * 100);
+function generateNumber(maxNumber) {
+  return Math.floor(Math.random() * maxNumber) + 1;
 }
 
 function selectChoice() {
@@ -25,9 +25,9 @@ function wonMessage(){
 
 function hintMessage(number, guessedNumber) {
   if(guessedNumber > number) {
-    console.log("\nyou're guess was too high");
+    console.log("\nyou're guess was too high ☹️");
   } else {
-    console.log("\nyou're guess was too low");
+    console.log("\nyou're guess was too low ☹️");
   }
   return;
 }
@@ -45,7 +45,7 @@ function playGuesingNumber(number, chances = 4) {
 }
 
 function play() {
-  playGuesingNumber(generateNumber());
+  playGuesingNumber(generateNumber(100));
 }
 
 function welcomeMessage() {
