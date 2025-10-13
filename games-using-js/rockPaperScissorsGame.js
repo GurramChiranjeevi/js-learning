@@ -1,3 +1,11 @@
+function generateNumber(maxNumber) {
+  return Math.floor((Math.random() * maxNumber)) + 1;
+}
+
+function welcomeMessage() {
+  console.log(`let's play rock, paper & scissors game \n1 => ROCK 🪨\n2 => PAPER 📝\n3 => SCISSORS ✂️`);
+}
+
 function generateChoice(valueGenerated) {
   switch (valueGenerated) {
     case 1:
@@ -19,22 +27,27 @@ function isValidInput(input) {
     return false;
   }
   return true;
+} 
+
+function printChoices(userChoice, opponentChoice) {
+  console.log("You selected :", userChoice);
+  console.log("opponent selected :", opponentChoice);
 }
 
-function winMessage(opponentChoice) {
-  console.log("opponent selected", opponentChoice);
+function winMessage(opponentChoice, userChoice) {
   console.log("Result :Hurrayyy!, you won 🎉");
+  printChoices(userChoice, opponentChoice);
 }
 
-function lostMessage(opponentChoice) {
-  console.log("opponent selected", opponentChoice);
-  console.log("Result : you lost 👎");
+function lostMessage(opponentChoice, userChoice) {
+  console.log("you lost 👎");
+  printChoices(userChoice, opponentChoice);
 }
 
 function playAgain() {
   const yesOrNo = confirm("Do you want to play again ?");
+  console.clear();
   if (yesOrNo) {
-    console.clear();
     return playRockPaper();
   }
   return;
@@ -42,27 +55,21 @@ function playAgain() {
 
 function decideGame(userChoice, computerChoice) {
   if (userChoice === computerChoice) {
-    console.log("Result :Draw");
+    console.log("Result :Draw match 🙂");
     console.log("coz opponent also selected the same!");
+    return;
   }
-  else if (userChoice === "ROCK" && computerChoice === "PAPER") {
-    lostMessage(computerChoice);
-  } else if (userChoice === "PAPER" && computerChoice === "SCISSORS") {
-    lostMessage(computerChoice);
-  } else if (userChoice === "SCISSORS" && computerChoice === "PAPER") {
-    winMessage(computerChoice);
-  } else if (userChoice === "ROCK" && computerChoice === "SCISSORS") {
-    winMessage(computerChoice);
-  } else if (userChoice === "PAPER" && computerChoice === "ROCK") {
-    winMessage(computerChoice);
-  } else if (userChoice === "SCISSORS" && computerChoice === "ROCK") {
-    lostMessage(computerChoice);
+  if ((userChoice === "ROCK" && computerChoice === "PAPER") || 
+  (userChoice === "PAPER" && computerChoice === "SCISSORS") || 
+  (userChoice === "SCISSORS" && computerChoice === "ROCK")) {
+    lostMessage(computerChoice, userChoice);
+    return;
   }
+  winMessage(computerChoice, userChoice);
 }
 
 function playRockPaper() {
-  console.log(`let's play rock, paper & scissors game \n1)ROCK 🪨\n2)PAPER 📝\n3)SCISSORS ✂️`);
-  const computerInput = Math.floor((Math.random() * 3)) + 1;
+  const computerInput = generateNumber(3);
   const computerChoice = generateChoice(computerInput);
 
   const userInput = parseInt(prompt("select any one number :"));
@@ -73,4 +80,10 @@ function playRockPaper() {
   return playAgain();
 }
 
+function goodByeMessage() {
+  console.log("ok take care, good bye👋");
+}
+
+welcomeMessage();
 playRockPaper();
+goodByeMessage();
